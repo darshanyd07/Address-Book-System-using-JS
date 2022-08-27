@@ -24,3 +24,19 @@ function contactExists(firstName, lastName) {
       (contact) => contact.firstName == firstName && contact.lastName == lastName
     );
   }
+
+  /**
+ *  Function to delete a contact
+ * @param {} firstName - We will pass the first name of the contact to delete
+ * @param {*} lastName - We will pass the last name of the contact to delete
+ */
+function deleteContact(firstName, lastName) {
+    if (contactExists(firstName, lastName)) {
+      addressBookArray = addressBookArray.filter(
+        (contact) =>
+          contact.firstName != firstName && contact.lastName != lastName
+      );
+    } else {
+      console.log("Contact Does Not Exist");
+    }
+  }
