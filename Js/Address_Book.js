@@ -40,3 +40,18 @@ function deleteContact(firstName, lastName) {
       console.log("Contact Does Not Exist");
     }
   }
+
+  /**
+ * Function to count the contacts in the array
+ * We have used the reduce method to call the specified function for all the elements in an array.
+ * @param {*} count - count of contact
+ * @returns - total count
+ */
+function getCountOfContacts(count) {
+    count += 1;
+    return count;
+  }
+  console.log(addressBookArray);
+  console.log(
+    "\nCount of Contacts : " + addressBookArray.reduce(getCountOfContacts, 0)
+  );
