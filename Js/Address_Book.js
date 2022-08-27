@@ -165,6 +165,15 @@ function getCountOfContacts(count) {
     "\nCount of Contacts : " + addressBookArray.reduce(getCountOfContacts, 0)
   );
  
+  function getCountOfContactsByCity(city) {
+    return (
+      "Count of Contacts in " +
+      city +
+      " is: " +
+      addressBookArray.filter((contact) => contact.city == city).length
+    );
+  }
+
   function sortAddressBookByCity() {
     addressBookArray.sort((firstPerson, secondPerson) =>
       firstPerson.city.localeCompare(secondPerson.city)
