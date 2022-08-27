@@ -164,5 +164,17 @@ function getCountOfContacts(count) {
   console.log(
     "\nCount of Contacts : " + addressBookArray.reduce(getCountOfContacts, 0)
   );
-  Ability to ensure there is no
-  Duplicate Entry
+ 
+  function sortAddressBookByCity() {
+    addressBookArray.sort((firstPerson, secondPerson) =>
+      firstPerson.city.localeCompare(secondPerson.city)
+    );
+    console.log(addressBookArray);
+  }
+  
+  function sortAddressBookByState() {
+    addressBookArray.sort((firstPerson, secondPerson) =>
+      firstPerson.state.localeCompare(secondPerson.state)
+    );
+    console.log(addressBookArray);
+  }
