@@ -6,3 +6,8 @@ const phoneNumberRegex = RegExp("^[0-9]{2}[-]{1}[0-9]{10}$");
 const emailRegex = RegExp(
   "^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$"
 );
+
+// Using array to store the contacts.
+//  * We are using the push method to add the contact in the array
+let addressBookArray = new Array();
+
