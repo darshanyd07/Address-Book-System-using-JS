@@ -11,3 +11,16 @@ const emailRegex = RegExp(
 //  * We are using the push method to add the contact in the array
 let addressBookArray = new Array();
 
+
+/**
+ * Function to check if the contact exists in array.
+ * @param {*} firstName - We will pass the first name of the contact to edit
+ * @param {*} lastName - We will pass the last name of the contact to edit
+ * @returns Will return true if contact exists
+ */
+
+function contactExists(firstName, lastName) {
+    return addressBookArray.some(
+      (contact) => contact.firstName == firstName && contact.lastName == lastName
+    );
+  }
