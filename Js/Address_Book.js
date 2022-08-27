@@ -295,5 +295,3 @@ function sortAddressBookByZip() {
   console.log(addressBookArray);
 }
 sortAddressBookByName();
-Ability to sort the entries
-in the address book
