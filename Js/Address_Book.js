@@ -10,7 +10,116 @@ const emailRegex = RegExp(
 // Using array to store the contacts.
 //  * We are using the push method to add the contact in the array
 let addressBookArray = new Array();
-
+class Contact {
+    /**
+     * Constructor
+     * @param  {...any} param - above mentioned fields.
+     */
+    constructor(...params) {
+      this.firstName = params[0];
+      this.lastName = params[1];
+      this.city = params[2];
+      this.state = params[3];
+      this.zip = params[4];
+      this.phoneNumber = params[5];
+      this.email = params[6];
+    }
+    /**
+     * Getters for all fields
+     */
+    get firstName() {
+      return this._firstName;
+    }
+  
+    get lastName() {
+      return this._lastName;
+    }
+  
+    get city() {
+      return this._city;
+    }
+  
+    get state() {
+      return this._state;
+    }
+  
+    get zip() {
+      return this._zip;
+    }
+  
+    get phoneNumber() {
+      return this._phoneNumber;
+    }
+  
+    get email() {
+      return this._email;
+    }
+    /**
+     * Setters for all fields
+     */
+    set firstName(firstName) {
+      if (nameRegex.test(firstName)) this._firstName = firstName;
+      else throw "**** FIRST NAME is Incorrect ****";
+    }
+  
+    set lastName(lastName) {
+      if (nameRegex.test(lastName)) this._lastName = lastName;
+      else throw "**** LAST NAME is Incorrect ****";
+    }
+  
+    set address(address) {
+      if (addressRegex.test(address)) this._address = address;
+      else throw "**** ADDRESS is Incorrect ****";
+    }
+  
+    set city(city) {
+      if (cityStateRegex.test(city)) this._city = city;
+      else throw "**** CITY is Incorrect ****";
+    }
+  
+    set state(state) {
+      if (cityStateRegex.test(state)) this._state = state;
+      else throw "**** STATE is Incorrect ****";
+    }
+  
+    set zip(zip) {
+      if (zipRegex.test(zip)) this._zip = zip;
+      else throw "**** ZIP is Incorrect ****";
+    }
+  
+    set phoneNumber(phoneNumber) {
+      if (phoneNumberRegex.test(phoneNumber)) this._phoneNumber = phoneNumber;
+      else throw "**** PHONE NUMBER is Incorrect ****";
+    }
+  
+    set email(email) {
+      if (emailRegex.test(email)) this._email = email;
+      else throw "**** EMAIL ADDRESS is Incorrect ****";
+    }
+    /**
+     * To String Method
+     * @returns - Contact object in String form.
+     */
+    toString() {
+      return (
+        "First Name : " +
+        this.firstName +
+        ", Last Name : " +
+        this.lastName +
+        ", City : " +
+        this.city +
+        ", State : " +
+        this.state +
+        ", Zip : " +
+        this.zip +
+        ", Phone Number : " +
+        this.phoneNumber +
+        ", Email : " +
+        this.email
+      );
+    }
+  }
+  
 
 /**
  * Function to check if the contact exists in array.
@@ -55,3 +164,5 @@ function getCountOfContacts(count) {
   console.log(
     "\nCount of Contacts : " + addressBookArray.reduce(getCountOfContacts, 0)
   );
+  Ability to ensure there is no
+  Duplicate Entry
